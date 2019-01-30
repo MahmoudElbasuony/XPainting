@@ -1,8 +1,9 @@
 import { SERVER_DEFAULT_PORT } from "./constants/ServerConstants";
-import { Start } from "./startup";
+import { Server } from "./startup";
 
 
 // start server 
-Start(SERVER_DEFAULT_PORT);
+Server.Start(SERVER_DEFAULT_PORT);
+
 
 

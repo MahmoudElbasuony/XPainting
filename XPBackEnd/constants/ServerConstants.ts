@@ -1,1 +1,1 @@
-export const SERVER_DEFAULT_PORT = 4000;
+export const SERVER_DEFAULT_PORT : number = 4000;
