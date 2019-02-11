@@ -11,6 +11,8 @@ export function StaticFilesModule(rootPath) {
 
         if (startIndex >= 0) {
             const file_path = path.resolve(request.url.substr(startIndex, request.url.length));
+            if (request.headers.accept)
+                response.setHeader("Content-Type", request.headers.accept);
             response.write(fs.readFileSync(file_path));
             response.end();
             return;

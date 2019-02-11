@@ -6,8 +6,8 @@ module.exports = {
     watch: true,
     target: 'node',
     output: {
-        filename: 'main.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: 'startup.js',
+        path: path.resolve(__dirname, 'assets/dist')
     },
     node: {
         __dirname: false,

@@ -1,10 +1,10 @@
+import { AppController } from './controllers/app.controller';
 import { NotFoundController } from './controllers/notfound.controller';
 import { HomeController } from './controllers/home.controller';
 import { AddressInfo } from 'net';
 import { SERVER_DEFAULT_PORT } from './constants/ServerConstants';
 import * as http from "http";
 import { Routing } from './modules/routing_moudle';
-import { Controller } from './controllers/base.controller';
 import { AboutController } from './controllers/about.controller';
 import { StaticFilesModule } from './modules/static_files_module';
 import { Pipline } from './modules/pipiline';
@@ -26,6 +26,10 @@ const server = http.createServer((request, response) => {
                 {
                     url: '/about',
                     handler: new AboutController()
+                },
+                {
+                    url : '/app',
+                    handler: new AppController()
                 },
                 {
                     url: '/',

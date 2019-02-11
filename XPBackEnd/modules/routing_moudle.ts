@@ -38,6 +38,7 @@ export function Routing(routes: Route[] = []) {
         const notMatchHandler = <Controller>(routes.filter(route => route.url == "**" && route.handler).map(route => route.handler)[0] || new NotFoundController());
         notMatchHandler.Request = request;
         notMatchHandler.Response = response;
+        
 
         result = notMatchHandler.ProcessRequest();
         

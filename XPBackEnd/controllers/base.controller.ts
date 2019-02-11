@@ -32,6 +32,29 @@ export abstract class Controller {
 
     }
 
+    ViewPage(page_path) {
+
+        if (!page_path)
+            throw "Page path required !";
+
+        let content = "";
+
+
+        if (page_path.indexOf(".html") < 0)
+            throw 'page file should be in correct html format with .html extension';
+
+
+        page_path = path.resolve(page_path);
+
+
+        if (fs.existsSync(page_path))
+            content = fs.readFileSync(page_path, { encoding: "utf-8" });
+
+        
+
+        return content;
+    }
+
     private RenderLayout(): string {
 
         let content = "";
@@ -58,7 +81,7 @@ export abstract class Controller {
         const hasExtension = (path.extname(viewName) || "").toLowerCase() === ".html";
 
         const view_path = "./views/" + viewName + (hasExtension ? "" : ".html");
-        
+
         if (view_path && fs.existsSync(view_path))
             content = fs.readFileSync(view_path, { encoding: "utf-8" });
 
