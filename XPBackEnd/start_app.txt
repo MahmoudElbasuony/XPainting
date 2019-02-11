@@ -1,0 +1,5 @@
+* build first angular app :  navigate to angular directory in cmd and write : ng build --base-href /assets/dist/FE/
+
+* go to backend directory and run : npm start 
+
+* to start watch typescriptt files changes : npm run watch 
