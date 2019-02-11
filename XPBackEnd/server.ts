@@ -6,29 +6,37 @@ import * as http from "http";
 import { Routing } from './modules/routing_moudle';
 import { Controller } from './controllers/base.controller';
 import { AboutController } from './controllers/about.controller';
+import { StaticFilesModule } from './modules/static_files_module';
+import { Pipline } from './modules/pipiline';
 
 const server = http.createServer((request, response) => {
 
     try {
 
-        Routing(request, response, [
-            {
-                url: '/home',
-                handler: new HomeController()
+        Pipline(request, response, [
 
-            },
-            {
-                url: '/about',
-                handler: new AboutController()
-            },
-            {
-                url: '/',
-                handler: new HomeController()
-            },
-            {
-                url: '**',
-                handler: new NotFoundController()
-            }
+            new StaticFilesModule('assets'),
+
+            new Routing([
+                {
+                    url: '/home',
+                    handler: new HomeController()
+
+                },
+                {
+                    url: '/about',
+                    handler: new AboutController()
+                },
+                {
+                    url: '/',
+                    handler: new HomeController()
+                },
+                {
+                    url: '**',
+                    handler: new NotFoundController()
+                }
+            ])
+
         ]);
 
     }

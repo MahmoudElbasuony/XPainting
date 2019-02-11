@@ -7,6 +7,6 @@ export class NotFoundController extends Controller {
     }
 
     ProcessRequest() {
-        this.Response.write('page not found');
+        return this.View("notfound")
     }
 }

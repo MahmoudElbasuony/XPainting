@@ -7,6 +7,10 @@ export class HomeController extends Controller {
 
 
     ProcessRequest() {
-        this.Response.write('welcome to home page')
+        return this.View("home");
+        
     }
+
+
+    
 }

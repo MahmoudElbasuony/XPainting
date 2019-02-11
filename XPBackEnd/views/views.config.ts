@@ -1,0 +1,1 @@
+export const LAYOUT_NAME : string = 'layout.html';

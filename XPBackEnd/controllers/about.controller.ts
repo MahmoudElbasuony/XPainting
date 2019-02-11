@@ -6,6 +6,6 @@ export class AboutController extends Controller {
     }
 
     ProcessRequest() {
-        this.Response.write('welcome to about page');
+        return this.View("about")
     }
 }  

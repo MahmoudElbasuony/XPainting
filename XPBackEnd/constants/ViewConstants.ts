@@ -1,0 +1,1 @@
+export const DEFAULT_BODY_INDICATOR = "@Body()";
